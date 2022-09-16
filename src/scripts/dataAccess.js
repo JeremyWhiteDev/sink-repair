@@ -13,3 +13,17 @@ export const fetchRequests = async () => {
 export const getRequests = () => {
   return applicationState.requests.map((x) => ({ ...x }));
 };
+
+export const sendRequest = async (userServiceRequest) => {
+  const fetchOptions = {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(userServiceRequest),
+  };
+
+  const response = await fetch(`${API}/requests`, fetchOptions);
+  const responseJson = await response.json();
+  return responseJson;
+};
