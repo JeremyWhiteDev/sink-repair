@@ -1,0 +1,36 @@
+.request {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    border: 1px solid black
+}
+.request li {
+    display: flex;
+    justify-content: space-between;
+    
+}
+
+.request:nth-child(odd) {
+    background-color: gray  ;
+}
+
+.request__delete {
+    padding: 6px;
+    border: 1px solid whitesmoke;
+    border-radius: 5px;
+    margin: 5px 10px;
+    background-color: #bc4749;
+    color: whitesmoke;
+    box-sizing: border-box;
+    
+}
+
+
+.request__delete:hover {
+    background-color: whitesmoke;;
+    border: 1px solid #bc4749;
+    color:#bc4749;
+    cursor: pointer;
+    box-sizing: border-box;
+
+}

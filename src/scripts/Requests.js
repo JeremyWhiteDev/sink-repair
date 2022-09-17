@@ -1,21 +1,31 @@
-import { getRequests } from "./dataAccess.js";
+import { getRequests, deleteRequest } from "./dataAccess.js";
 
 export const Requests = () => {
   const requests = getRequests();
 
   const convertRequestToListItems = (obj) => {
-    return `
-        <li>Description: ${obj.description}</li>
-        <li> Address: ${obj.address}</li>
-        <li> Budget: ${obj.budget}</li>
-        <li> Needed By: ${obj.neededBy}`;
+    return `<ul class="request">
+        <li>
+        ${obj.description}
+        <button class="request__delete" id="request--${obj.id}">
+        Delete
+        </button>
+        </li>
+        </ul>`;
   };
 
   let html = `
-        <ul>
             ${requests.map(convertRequestToListItems).join("")}
-				</ul>
+
     `;
 
   return html;
 };
+const mainContainer = document.querySelector("#container");
+
+mainContainer.addEventListener("click", (click) => {
+  if (click.target.id.startsWith("request--")) {
+    const [, requestId] = click.target.id.split("--");
+    deleteRequest(parseInt(requestId));
+  }
+});

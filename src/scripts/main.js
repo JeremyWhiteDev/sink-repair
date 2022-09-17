@@ -9,3 +9,5 @@ const render = async () => {
 };
 
 render();
+
+mainContainer.addEventListener("stateChanged", (e) => render());
