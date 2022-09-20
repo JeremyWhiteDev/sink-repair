@@ -1,6 +1,6 @@
 .request {
     margin: 0;
-    padding: 0;
+    padding: 4px;
     list-style: none;
     border: 1px solid black
 }
@@ -9,10 +9,18 @@
     justify-content: space-between;
     
 }
-
-.request:nth-child(odd) {
-    background-color: gray  ;
+.request select {
+    max-height: 25px;
 }
+
+.request:nth-child(even) {
+    background-color: lightgray  ;
+}
+.request.header {
+    background-color: #6a994e;
+    color: whitesmoke;
+}
+
 
 .request__delete {
     padding: 6px;
@@ -22,7 +30,6 @@
     background-color: #bc4749;
     color: whitesmoke;
     box-sizing: border-box;
-    
 }
 
 
@@ -33,4 +40,7 @@
     cursor: pointer;
     box-sizing: border-box;
 
+}
+.request.complete {
+    background: tomato;
 }
