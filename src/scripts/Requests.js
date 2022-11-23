@@ -12,7 +12,6 @@ export const Requests = () => {
   const completions = getCompletions();
 
   const convertRequestToListItems = (obj) => {
-    let html = "";
     if (completions.find((x) => x.requestId == obj.id)) {
       return `<ul class="request complete">
       <li>
